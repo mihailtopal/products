@@ -1,5 +1,5 @@
 import React from "react";
-import style from "./styles.module.scss";
+import style from "../Products/styles.module.scss";
 import { LikeOutlined } from "@ant-design/icons";
 
 interface LikeButtonProps {

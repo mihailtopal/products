@@ -1,8 +1,41 @@
 import React from "react";
 import { Select } from "antd";
-import useProductStore, { FilterType } from "../../store/store";
+import useProductStore from "../../store/store";
+import { FilterType } from "../../types/types";
 
-const ProductFilter = () => {
+const filterOptions = [
+  {
+    value: "all",
+    label: "Все",
+  },
+  {
+    value: "favorites",
+    label: "Избранные",
+  },
+  {
+    label: "Категории",
+    options: [
+      {
+        value: "men's clothing",
+        label: "Мужская одежда",
+      },
+      {
+        value: "jewelery",
+        label: "Украшения",
+      },
+      {
+        value: "electronics",
+        label: "Электроника",
+      },
+      {
+        value: "women's clothing",
+        label: "Женская одежда",
+      },
+    ],
+  },
+];
+
+const ProductsFilter = () => {
   const setFilter = useProductStore((state) => state.setFilter);
   const filter = useProductStore((state) => state.filter);
   const setCurrentPage = useProductStore((state) => state.setCurrentPage);
@@ -16,41 +49,11 @@ const ProductFilter = () => {
       onChange={handleChangeCategory}
       showSearch
       style={{ width: 160 }}
-      placeholder="Выберите фильтр "
+      placeholder="Выберите фильтр"
       optionFilterProp="label"
-      options={[
-        {
-          value: "all",
-          label: "Все",
-        },
-        {
-          value: "favorites",
-          label: "Избранные",
-        },
-        {
-          label: "Категории",
-          options: [
-            {
-              value: "men's clothing",
-              label: "Мужская одежда",
-            },
-            {
-              value: "jewelery",
-              label: "Украшения",
-            },
-            {
-              value: "electronics",
-              label: "Электроника",
-            },
-            {
-              value: "women's clothing",
-              label: "Женская одежда",
-            },
-          ],
-        },
-      ]}
+      options={filterOptions}
     />
   );
 };
 
-export default ProductFilter;
+export default ProductsFilter;

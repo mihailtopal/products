@@ -1,15 +1,31 @@
-.productsContainer {
-  display: flex;
-  flex-wrap: wrap;
-}
-.navigation {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  margin: 18px 0px;
-  div:last-of-type {
-    button {
-      margin-left: 16px;
+.productDetail {
+  position: relative;
+  border-radius: 6px;
+  padding-top: 10%;
+  background-color: white;
+  margin-top: 20px;
+  height: calc(100vh - 91px);
+  .imageContainer {
+    .image {
+      width: 50%;
     }
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    > div {
+    }
+  }
+  display: flex;
+  .descriptionContainer {
+    padding-right: 10%;
+    width: 50%;
+    .description {
+      opacity: 0.5;
+    }
+  }
+  button {
+    top: 20px;
+    left: 20px;
+    position: absolute;
   }
 }

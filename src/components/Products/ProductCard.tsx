@@ -1,10 +1,11 @@
 import { Card, Col, Image } from "antd";
 import React from "react";
-import useProductStore, { Product } from "../../store/store";
+import useProductStore from "../../store/store";
 import style from "./styles.module.scss";
-import DeleteButton from "./DeleteButton";
-import LikeButton from "./LikeButton";
+import DeleteButton from "../common/DeleteButton";
+import LikeButton from "../common/LikeButton";
 import { useNavigate } from "react-router-dom";
+import { Product } from "../../types/types";
 
 interface ProductCardProps {
   product: Product;
@@ -20,7 +21,7 @@ const ProductCard: React.FC<ProductCardProps> = React.memo(({ product }) => {
   const handleClickCard = () => {
     navigate(`/products/${product.id}`);
   };
-  console.log("render card", product.id);
+
   return (
     <Col
       className={style.productCard}
@@ -50,15 +51,6 @@ const ProductCard: React.FC<ProductCardProps> = React.memo(({ product }) => {
         </div>
       </Card>
     </Col>
-
-    // <div>
-    // 	<img src={product.image} alt={product.title} style={{ width: '100px', height: '100px', objectFit: 'cover' }} />
-    // 	<h3>{product.title}</h3>
-    // 	<p>{product.description}</p>
-    // 	<p>Category: {product.category}</p>
-    // 	<p>Price: ${product.price}</p>
-    // 	<p>Rating: {product.rating.rate} ({product.rating.count} reviews)</p>
-    // </div>
   );
 });
 

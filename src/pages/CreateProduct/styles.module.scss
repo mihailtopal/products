@@ -1,31 +1,8 @@
-.productDetail {
-  position: relative;
-  border-radius: 6px;
-  padding-top: 10%;
+.createForm {
+  border-radius: 10px;
   background-color: white;
-  margin-top: 20px;
-  height: calc(100vh - 91px);
-  .imageContainer {
-    .image {
-      width: 50%;
-    }
-    width: 50%;
-    display: flex;
-    justify-content: center;
-    > div {
-    }
-  }
-  display: flex;
-  .descriptionContainer {
-    padding-right: 10%;
-    width: 50%;
-    .description {
-      opacity: 0.5;
-    }
-  }
-  button {
-    top: 20px;
-    left: 20px;
-    position: absolute;
-  }
+  padding: 40px;
+  max-width: 600px;
+  margin: 0 auto;
+  margin-top: 100px;
 }

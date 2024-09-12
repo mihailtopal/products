@@ -24,13 +24,6 @@ const DeleteButton: React.FC<DeleteButtonProps> = ({ handleClick }) => {
         onClick={(e) => e.stopPropagation()}
       ></Button>
     </Popconfirm>
-    // <DeleteOutlined
-    //
-    //   onClick={(e) => {
-    //     e.stopPropagation();
-    //     handleClick();
-    //   }}
-    // />
   );
 };
 
